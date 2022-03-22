@@ -6,4 +6,3 @@
 
 [komentorivi.txt](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
-Yay!
