@@ -1,0 +1,124 @@
+commit dbc9f4a10215b50e5882756de94b1637efd0cc57 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:31:01 2022 +0200 
+
+   File1 poistettu ja file2 nimetty file22 
+
+tiedostoja/file1             | 1 - 
+tiedostoja/{file2 => file22} | 0 
+tiedostoja/file3             | 1 + 
+3 files changed, 1 insertion(+), 1 deletion(-) 
+
+commit 049d1acefb93952b9fbf1b797a970e2931ab481a 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:29:15 2022 +0200 
+
+   Muutokset tehty 
+
+tiedostoja/file1             | 1 + 
+tiedostoja/{file1, => file2} | 0 
+tiedostoja/file2,            | 0 
+3 files changed, 1 insertion(+) 
+
+commit faf89f2bd5671311dcf11f6b55d6a613c9b6fd06 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:24:26 2022 +0200 
+
+   Tiedostoja ja file:t luotu 
+
+tiedostoja/file1, | 0 
+tiedostoja/file2, | 0 
+tiedostoja/file3  | 0 
+3 files changed, 0 insertions(+), 0 deletions(-) 
+
+commit 027b0724567fa6d5cfe34a5b17b5167230df1cd9 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:11:28 2022 +0200 
+
+   Eka ja kolmas modifioitu 
+
+eka.txt    | 2 +- 
+kolmas.txt | 2 ++ 
+2 files changed, 3 insertions(+), 1 deletion(-) 
+
+commit 9d57f37d5a677c450cbc8693e77f3852ae2fcba2 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:07:50 2022 +0200 
+
+   tiedoston nimi vaihettu eka.txt 
+
+tiedosto.txt => eka.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit f1d035b49f312e6def6a2551154a9b361c6482e3 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:06:45 2022 +0200 
+
+   Toinen poistettu 
+
+toinen.txt | 1 - 
+1 file changed, 1 deletion(-) 
+
+commit 78a9945b8f0e0ac9cbcf5846a760dd38b5808336 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 18:04:08 2022 +0200 
+
+   Lisätty tiedostoon paljon tekstiä 
+
+tiedosto.txt | 2 ++ 
+1 file changed, 2 insertions(+) 
+
+commit 896a915d1543bae61413eccf19a41942aa5a133e 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 17:57:27 2022 +0200 
+
+   Luotu stuff ja file.txt 
+
+stuff/file.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit b74699538a89aa11f32ac8f6c13faccf3ea4ce89 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 17:56:27 2022 +0200 
+
+   Modified toinen and kolmas 
+
+kolmas.txt | 1 + 
+toinen.txt | 1 + 
+2 files changed, 2 insertions(+) 
+
+commit 3f689f6cdf96183dbecda4bd8c8e69a2f4183a38 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 17:54:45 2022 +0200 
+
+   Toinen lisätty 
+
+toinen.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit e71a9f0eb7b699e870845fc2adcba036cfae2882 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 17:52:21 2022 +0200 
+
+   Kolmas luotu 
+
+kolmas.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-) 
+
+commit ba3066916c275523b60f05ebb4987f2c41c834ea 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 17:50:00 2022 +0200 
+
+   muutos ja lisäys 
+
+tiedosto.txt | 1 + 
+1 file changed, 1 insertion(+) 
+
+commit 5bc25c4c560f615bf18a64a851843a263f4f3289 
+Author: Yahia <yahimoh@icloud.com> 
+Date:   Tue Mar 22 17:36:46 2022 +0200 
+
+   tiedosto.txt luotu 
+
+tiedosto.txt | 0 
+1 file changed, 0 insertions(+), 0 deletions(-)
