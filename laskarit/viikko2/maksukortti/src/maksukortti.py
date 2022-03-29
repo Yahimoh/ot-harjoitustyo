@@ -22,5 +22,14 @@ class Maksukortti:
         if self.arvo > 150:
             self.arvo = 150
 
+    def ota_rahaa(self, rahamaara):
+        if self.arvo < rahamaara:
+            return False
+
+        self.arvo -= rahamaara
+
+        return True
+
+
     def __str__(self):
         return f"Kortilla on rahaa {self.arvo} euroa"
