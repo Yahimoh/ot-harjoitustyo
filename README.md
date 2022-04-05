@@ -9,6 +9,6 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 
 [Vaatimuusmäärittely](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Verkkokauppa/Dokumentaatio/Vaatimuusmaarittely.md)
 
-[Verkkokaupan Changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Verkkokauppa/Dokumentaatio/changelog.md)
+[Verkkokaupan changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Verkkokauppa/Dokumentaatio/changelog.md)
 
 
