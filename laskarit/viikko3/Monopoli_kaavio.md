@@ -2,7 +2,8 @@
  classDiagram
 	
 	Noppa "2" --> Pelaaja
-	Pelaaja "2..8" --> "1" Pelilauta
+	Pelaaja "2..8" --> Pelilauta
+	Ruutu "40" --> Pelilauta
 
 	class Noppa {
 		luku
@@ -14,6 +15,6 @@
 	class Pelilauta {
 	}
 
-	class Tontti {
+	class Ruutu {
 	}
 ```
