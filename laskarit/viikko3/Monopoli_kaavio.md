@@ -41,6 +41,7 @@
 	}
 
 	class Aloitusruutu {
+		-onko_ruutu_ohitettu: Bool
 	}
 
 	class Vankilaruutu {
