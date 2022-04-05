@@ -1,12 +1,18 @@
 
 class Verkkokauppa:
-    def __init__(self):
 
-        kayttaja = input("Terve! Oletko kauppias vai asiakas? ")
+    def __init__(self, kayttaja: str):
+        self.nakyma = ""
 
         if kayttaja == "asiakas":
-            print("Asiakkaan näkymä")
+            self.nakyma = "Asiakkaan näkymä"
         else:
-            print("Kauppiaan näkymä")
+            self.nakyma = "Kauppiaan näkymä"
 
-verkkokauppa = Verkkokauppa()
+    def __str__(self):
+        return self.nakyma
+
+
+
+verkkokauppa = Verkkokauppa("asiakas")
+print(verkkokauppa)
