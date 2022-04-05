@@ -9,4 +9,7 @@
 
 	class Pelilauta {
 	}
+
+	class Tontti {
+	}
 ```
