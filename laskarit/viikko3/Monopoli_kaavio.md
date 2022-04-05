@@ -34,6 +34,7 @@
 	}
 
 	class Ruutu {
+		-nimi: String
 	}
 	
 	class Pelinappula {
@@ -44,6 +45,7 @@
 	}
 
 	class Vankilaruutu {
+		-onko_vankilan_sisalla: Bool
 	}
 		
 	class Sattuma {
