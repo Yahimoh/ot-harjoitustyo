@@ -16,3 +16,4 @@
 
 [Vaatimuusmäärittely](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Dokumentaatio/Vaatimuusmaarittely.md)
 
+[Verkkokaupan Changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Dokumentaatio/changelog.md)
