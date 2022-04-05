@@ -15,12 +15,16 @@
 	Laitos --> Ruutu
 	Katu --> Ruutu
 	
+	Hotelli "1" --> Katu
+	Talo "1..4" --> Katu
+	
 
 	class Noppa {
 		luku
 	}
 
-        class Pelaaja {     
+        class Pelaaja {
+		rahaa
         }
 
 	class Pelilauta {
@@ -52,6 +56,12 @@
 	}
 
 	class Katu {
+	}
+	
+	class Hotelli {
+	}
+	
+	class Talo {
 	}
 	 
 ```
