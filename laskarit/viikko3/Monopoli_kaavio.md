@@ -18,6 +18,9 @@
 	Hotelli "1" --> Katu
 	Talo "1..4" --> Katu
 	
+	Kortti --> Sattuma
+	Kortti --> Yhteismaa
+	
 
 	class Noppa {
 		luku
@@ -62,6 +65,9 @@
 	}
 	
 	class Talo {
+	}
+	
+	class Kortti {
 	}
 	 
 ```
