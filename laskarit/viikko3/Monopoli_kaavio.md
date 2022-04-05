@@ -6,4 +6,7 @@
 
         class Pelaaja {     
         }
+
+	class Pelilauta {
+	}
 ```
