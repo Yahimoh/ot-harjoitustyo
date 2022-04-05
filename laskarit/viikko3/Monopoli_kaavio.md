@@ -5,7 +5,7 @@
 	Pelaaja "2..8" --> Pelilauta
 	Ruutu "40" --> Pelilauta
 	Pelinappula "1" --> Pelaaja
-	Pelinappuka --> Ruutu
+	Pelinappula --> Ruutu
 
 	class Noppa {
 		luku
