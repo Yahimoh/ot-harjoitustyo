@@ -7,3 +7,7 @@ class TestVerkkokauppa(unittest.TestCase):
 
     def test_konstruktori_asettaa_kayttajan_nakyman_oikein_asiakkaalle(self):
         self.assertEqual("Asiakkaan näkymä", str(self.kauppa))
+
+    def test_konstruktori_asettaa_kayttajan_nakyman_oikein_kauppiaalle(self):
+        kauppiaan_kauppa = Verkkokauppa("kauppias")
+        self.assertEqual("Kauppiaan näkymä", str(kauppiaan_kauppa))
