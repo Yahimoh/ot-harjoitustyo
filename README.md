@@ -1,4 +1,4 @@
-#Verkkokauppa#
+# Verkkokauppa #
 
 Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoamia tuotteita ja palveluita. Kauppias voi laatia tuotteile muun muassa nimen, hinnan ja tuotteen määrän. Verkkokaupassa luonnollisesti asiakas voi ostaa näitä kauppiaan tarjoamia tuotteita.
 
