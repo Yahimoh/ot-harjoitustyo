@@ -59,6 +59,7 @@
 	}
 
 	class Katu {
+		-omistaja: Pelaaja
 	}
 	
 	class Hotelli {
