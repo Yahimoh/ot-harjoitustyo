@@ -10,10 +10,9 @@
 ### Viikko 2 ###
 
 
-
 ## Dokumentaatio ##
-[Työaikakirjanpito](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Dokumentaatio/Tyoaikakirjanpito.md)
+[Työaikakirjanpito](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Verkkokauppa/Dokumentaatio/Tyoaikakirjanpito.md)
 
-[Vaatimuusmäärittely](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Dokumentaatio/Vaatimuusmaarittely.md)
+[Vaatimuusmäärittely](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Verkkokauppa/Dokumentaatio/Vaatimuusmaarittely.md)
 
-[Verkkokaupan Changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Dokumentaatio/changelog.md)
+[Verkkokaupan Changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/master/Verkkokauppa/Dokumentaatio/changelog.md)
