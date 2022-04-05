@@ -1,7 +1,7 @@
 ```mermaid
  classDiagram
 	
-	Noppa -.-> Pelaaja;
+	Noppa "2" --> Pelaaja
 
 	class Noppa {
 		luku
