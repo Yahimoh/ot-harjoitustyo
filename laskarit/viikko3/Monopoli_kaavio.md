@@ -5,7 +5,6 @@
 	Pelaaja "2..8" --> Pelilauta
 	Ruutu "40" --> Pelilauta
 	Pelinappula "1" --> Pelaaja
-	Pelinappula --> Ruutu
 
 	Aloitusruutu --> Ruutu
 	Vankilaruutu --> Ruutu
