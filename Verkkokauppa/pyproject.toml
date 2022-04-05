@@ -1,7 +1,7 @@
 [tool.poetry]
-name = "ot-harjoitustyo"
+name = "verkkokauppa"
 version = "0.1.0"
-description = "Verkkokauppa"
+description = "Verkkokauppa harjoitustyö"
 authors = ["Yahia <yahimoh@icloud.com>"]
 
 [tool.poetry.dependencies]
