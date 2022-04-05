@@ -9,6 +9,7 @@
 
 ### Viikko 2 ###
 [Maksukortti](https://github.com/Yahimoh/ot-harjoitustyo/tree/master/laskarit/viikko2/maksukortti)
+
 [Unicafe](https://github.com/Yahimoh/ot-harjoitustyo/tree/master/laskarit/viikko2/unicafe)
 
 
