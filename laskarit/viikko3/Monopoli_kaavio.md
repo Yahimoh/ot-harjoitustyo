@@ -55,9 +55,11 @@
 	}
 	
 	class Asema {
+		-hinta: Int
 	}
 	
 	class Laitos {
+		-hinta: Int
 	}
 
 	class Katu {
