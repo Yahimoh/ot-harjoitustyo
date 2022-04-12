@@ -13,6 +13,5 @@ class Verkkokauppa:
         return self.nakyma
 
 
-
 verkkokauppa = Verkkokauppa("asiakas")
 print(verkkokauppa)

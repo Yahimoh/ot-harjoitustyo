@@ -1,6 +1,7 @@
 import unittest
 from verkkokauppa import Verkkokauppa
 
+
 class TestVerkkokauppa(unittest.TestCase):
     def setUp(self):
         self.kauppa = Verkkokauppa("asiakas")
