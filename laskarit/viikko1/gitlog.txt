@@ -1,0 +1,136 @@
+commit 286059a99fde3d0958d95032aa14df766ef05217
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:29:38 2022 +0200
+
+    file1 poistettu ja file2 on file22
+
+ tiedostoja/file2             | 0
+ tiedostoja/{file1 => file22} | 0
+ tiedostoja/file3             | 1 +
+ 3 files changed, 1 insertion(+)
+
+commit a30091ed82ea811df2d268405115fdeb0daf21cc
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:27:17 2022 +0200
+
+    Tiedostot luotu
+
+ tiedostoja/file1 | 0
+ tiedostoja/file2 | 0
+ tiedostoja/file3 | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit db45ab25ef5a4dc0893f5f663e926c15a2bf658b
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:26:36 2022 +0200
+
+    Nollattu ja alotellaan tehtävä 11 uudestaan
+
+ tiedostoja/file1, | 0
+ tiedostoja/file2, | 0
+ tiedostoja/file3  | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 83327be891bf0cea45e6faf3037cc9cda369bf00
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:20:50 2022 +0200
+
+    tiedostot luotu
+
+ tiedostoja/file1, | 0
+ tiedostoja/file2, | 0
+ tiedostoja/file3  | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 7237361d8f736a968f02fd8d226721b590df5e82
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:14:19 2022 +0200
+
+    Tiedostot korjattu
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit a57fe43ab554a26fd006b68fc71fb665ddf15011
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:10:59 2022 +0200
+
+    tiedoston nimi muutettu
+
+ tiedosto.txt => eka.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit bd66b1d3e837ce920b0dacbfb87a8e847628f7a4
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:10:03 2022 +0200
+
+    toinen poistettu
+
+ toinen.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+commit ea24d23dacd0d7551724787363ef2a9c2a9d2093
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:09:35 2022 +0200
+
+    muokattu
+
+ tiedosto.txt | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+commit a5ba1e13b1681781d8dc3ebb2b03c37f6a7fb7cd
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 20:05:12 2022 +0200
+
+    tiedosto muokattu
+
+ tiedosto.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit 34b8ac0b195c705d09a0fe701ccc77affa72b4da
+Author: Yahimoh <yahimoh@icloud.com>
+Date:   Mon Nov 7 19:21:28 2022 +0200
+
+    Stuff luotu
+
+ stuff/Stuff.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 97f1a2588351fd56ab68e72bd0816a54b7d902b5
+Author: Mohamad Yahia <yahiamoh@melkki.cs.helsinki.fi>
+Date:   Mon Nov 7 19:19:26 2022 +0200
+
+    toinen ja kolmas muutettu
+
+ kolmas.txt | 1 +
+ toinen.txt | 1 +
+ 2 files changed, 2 insertions(+)
+
+commit e351f198bcf14aa8c9e0028ec809e622e1bd3b29
+Author: Mohamad Yahia <yahiamoh@melkki.cs.helsinki.fi>
+Date:   Mon Nov 7 19:18:04 2022 +0200
+
+    kolmas.txt luotu
+
+ kolmas.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit b84ac5683451a8a368e8bc2edb8e5977f487ce14
+Author: Mohamad Yahia <yahiamoh@melkki.cs.helsinki.fi>
+Date:   Mon Nov 7 19:16:31 2022 +0200
+
+    muutos ja lisäys
+
+ tiedosto.txt | 1 +
+ toinen.txt   | 0
+ 2 files changed, 1 insertion(+)
+
+commit 890a813b197c18a6a3bc27bf9a02df50ff845c37
+Author: Mohamad Yahia <yahiamoh@melkki.cs.helsinki.fi>
+Date:   Mon Nov 7 19:14:51 2022 +0200
+
+    tiedosto.txt luotu
+
+ tiedosto.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
