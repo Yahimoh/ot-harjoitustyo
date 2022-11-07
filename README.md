@@ -1,4 +1,5 @@
 # Ohjelmistotekniikka, harjoitustyö #
 
-** README **
-Normaali teksti
+## TEHTÄVÄT ##
+
+## Viikko 1 ##
