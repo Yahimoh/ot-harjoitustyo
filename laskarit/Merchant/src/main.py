@@ -14,9 +14,9 @@ while True:
         continue
 
     if valinta == 1:
-        verkkokauppa.asiakkaan_toiminta()
+        verkkokauppa.start("asiakas")
         break
 
     if valinta == 2:
-        verkkokauppa.kauppiaan_toiminta()
+        verkkokauppa.start("kauppias")
         break
