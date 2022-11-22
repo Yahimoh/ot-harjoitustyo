@@ -10,8 +10,11 @@ class Tuote:
     def get_hinta(self):
         return self.hinta
 
+    def update_nimi(self, uusi_nimi: str):
+        self.nimi = uusi_nimi
+
     def update_hinta(self, uusi_hinta : int):
         self.hinta = uusi_hinta
 
-    def update_nimi(self, uusi_nimi: str):
-        self.nimi = uusi_nimi
+    def __str__(self):
+        return self.nimi + ": " + str(self.hinta) + "€"
