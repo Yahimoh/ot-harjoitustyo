@@ -10,8 +10,12 @@
 ## Viikko 2 ##
 [100% testikattavuus](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/laskarit/viikko2/Screenshot%20from%202022-11-15%2023-05-30.png)
 
+## Viikko 2 ##
+[Monopoli kaavio](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/laskarit/viikko3/Monopoli_kaavio.md)
 
-## TEHTÄVÄT ##
+## Dokumentaatio ##
 [Vaatimuusmäärittely](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/Vaatimuusmaarittely.md)
 
 [Työaikakirjakirjanpito](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/Tyoaikakirjanpito.md)
+
+[Changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/changelog.md)
