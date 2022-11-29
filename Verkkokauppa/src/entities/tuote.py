@@ -1,6 +1,6 @@
 
 class Tuote:
-    def __init__(self, nimi : str, hinta : float):
+    def __init__(self, nimi: str, hinta: float):
         self.nimi = nimi
         self.hinta = hinta
 
@@ -13,7 +13,7 @@ class Tuote:
     def update_nimi(self, uusi_nimi: str):
         self.nimi = uusi_nimi
 
-    def update_hinta(self, uusi_hinta : int):
+    def update_hinta(self, uusi_hinta: int):
         self.hinta = uusi_hinta
 
     def __str__(self):

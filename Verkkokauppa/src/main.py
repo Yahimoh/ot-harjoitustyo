@@ -1,16 +1,16 @@
-from merchant import Merchant
+from services.merchant import Merchant
 
 verkkokauppa = Merchant()
 
 while True:
-    print("Tervetuloa verkkokauppaan!")
+    print("----------Tervetuloa verkkokauppaan!----------")
     print("")
     print("Oletko asiakas vai kauppias?")
     print("1: Asiakas")
     print("2: Kauppias")
     valinta = int(input("Valinta 1/2: "))
 
-    if valinta != 1 and valinta != 2:
+    if valinta not in (1, 2):
         continue
 
     if valinta == 1:

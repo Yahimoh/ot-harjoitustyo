@@ -1,5 +1,6 @@
 import unittest
-from tuote import Tuote
+from entities.tuote import Tuote
+
 
 class TestTuote(unittest.TestCase):
     def setUp(self):
