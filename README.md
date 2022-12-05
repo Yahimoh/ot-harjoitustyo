@@ -12,3 +12,16 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 [Changelog](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/changelog.md)
 
 [Arkkitehtuuri](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/arkkitehtuuri.md)
+
+#Asennus#
+
+Asenna projektin riippuvuudet komennolla:
+```bash
+poetry install
+```
+
+#Käynnistys#
+Käynnistä sovellus komennolla:
+```bash
+poetry run invoke start
+```
