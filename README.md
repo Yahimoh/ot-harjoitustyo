@@ -13,14 +13,14 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 
 [Arkkitehtuuri](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/arkkitehtuuri.md)
 
-#Asennus#
+## Asennus
 
 Asenna projektin riippuvuudet komennolla:
 ```bash
 poetry install
 ```
 
-#Käynnistys#
+## Käynnistys
 Käynnistä sovellus komennolla:
 ```bash
 poetry run invoke start
