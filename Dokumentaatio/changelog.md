@@ -7,3 +7,9 @@
 - Luotu ja integroitu sql tietokanta 
 - Asiakas voi nähdä saatavilla olevat tuotteet sekä myös lisää/poistaa tuotteita ostoskorille 
 - Kauppias voi laittaa saataville uusia tuotteita, poistaa tuotteita, päivittää tuotteiden hintaa / nimeä sekä poistaa tuotteita saatavilta jolloin ne eivät enään näy asiakkaalle.
+
+## Viikko 5
+- Toiminnat asiakkaan sisäänkirjautumiselle ja rekisteröitymiselle luotu
+- Asiakkaat näkevät vain oman ostoskorin tuotteita
+- Verkkokauppaan asiakkaaksi ei pääse ellei ole rekisteröitynyt
+- Ohjelman ulostulo korjattu ja siistitty
