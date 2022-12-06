@@ -1,5 +1,6 @@
 from services.merchant import Merchant
 
+
 verkkokauppa = Merchant()
 
 while True:
