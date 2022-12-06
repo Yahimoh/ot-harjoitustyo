@@ -9,13 +9,13 @@ Sovelluksessa on kaksi erilaista käyttäjää eli kauppias ja asiakas.
 ## Käyttöliittymä ##
 Verkkokaupan käyttöliittymä tulee olemaan kaksi erillaista, yksi omanlainen käyttöliitymä kauppialle, ja yksi asiakkaalle.
 
-## Perusversion toiminnallisuus ##
+## Perusversion toiminnallisuus ## 
 
 ### Kauppias ###
-Kauppias voi lisätä tuotteita, muokata tuotteita sekä poistaa tuotteita. 
+Kauppias voi lisätä tuotteita, muokata tuotteita sekä poistaa tuotteita. *tehty*
 
 ### Asiakas ###
-Asiakas voi selailla tuotteita ja lisätä sekä poistaa tuotteita asiakkaan ostoskorista.
+Asiakas voi selailla tuotteita ja lisätä sekä poistaa tuotteita asiakkaan ostoskorista. *tehty*
 
 ## Jatkokehitysideoita ##
 
@@ -30,6 +30,6 @@ Perustoiminnallisuuden jälkeen voidaan lisätä seuraavia toimintoja:
 ### Asiakkaalle ###
 
 - Mahdollisuus maksaa ostoksia
-- Sisäänkirjautuminen ja niin myös mahdollisuus esim. ostoksien seurannalle
+- Sisäänkirjautuminen ja niin myös mahdollisuus esim. ostoksien seurannalle *tehty*
 - Tuotteiden arvostelu
 - Tuotteiden lisääminen suosikeihin
