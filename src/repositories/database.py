@@ -15,7 +15,7 @@ class Database:
         try:
             self.db.execute("CREATE TABLE Tuote (id INTEGER PRIMARY KEY, nimi TEXT, hinta FLOAT)")
             self.db.execute("CREATE TABLE Ostoskori (id INTEGER PRIMARY KEY, omistaja_id INTEGER REFERENCES Tunnukset, tuote_id INTEGER REFERENCES  Tuote)")  # pylint: disable=line-too-long
-            self.db.execute("CREATE TABLE Tunnukset (id INTEGER PRIMARY KEY, kayttajatunnus TEXT, salasana TEXT)")
+            self.db.execute("CREATE TABLE Tunnukset (id INTEGER PRIMARY KEY, kayttajatunnus TEXT, salasana TEXT)") # pylint: disable=line-too-long
         except:
             print("Taulut ovat jo luotu")
 
