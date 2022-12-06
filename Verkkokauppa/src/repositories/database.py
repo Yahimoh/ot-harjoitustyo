@@ -6,20 +6,20 @@ class Database:
     def __init__(self):
 
 
-        self.db = sqlite3.connect("tuotteet.db") # pylint: disable=invalid-name
+        self.db = sqlite3.connect("backend.db") # pylint: disable=invalid-name
         self.db.isolation_level = None
 
         self.luo_taulut()
 
     def luo_taulut(self):
-        pass
-        #self.db.execute("DROP TABLE TUOTE")
-        #self.db.execute("DROP TABLE Ostoskori")
-        #self.db.execute("DROP TABLE Tunnukset")
-        #try:
-            #tuotteet = self.db.execute("SELECT T.nimi FROM Tuote T").fetchall()
-        #except:
-            #print("Error fetching tuotteet")
+        try:
+            self.db.execute("CREATE TABLE Tuote (id INTEGER PRIMARY KEY, nimi TEXT, hinta FLOAT)")
+            self.db.execute("CREATE TABLE Ostoskori (id INTEGER PRIMARY KEY, omistaja_id INTEGER REFERENCES Tunnukset, tuote_id INTEGER REFERENCES  Tuote)")  # pylint: disable=line-too-long
+            self.db.execute("CREATE TABLE Tunnukset (id INTEGER PRIMARY KEY, kayttajatunnus TEXT, salasana TEXT)")
+        except:
+            print("Taulut ovat jo luotu")
+
+
 
 
     def luo_tuote(self, tuote: Tuote):
