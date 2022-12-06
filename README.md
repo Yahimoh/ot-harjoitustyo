@@ -1,6 +1,6 @@
 # Verkkokauppa #
 
-Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoamia tuotteita ja palveluita. Kauppias voi laatia tuotteile muun muassa nimen, hinnan ja tuotteen määrän. Verkkokaupassa luonnollisesti asiakas voi ostaa näitä kauppiaan tarjoamia tuotteita.
+Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoamia tuotteita ja palveluita. Kauppias voi laatia tuotteile toistaiseksi nimen ja hinnan. Verkkokaupassa asiakas voi rekisteröityä / kirjautua sisään tililleen ja sitten asiakas voi katsoa ja lisää tai poistaa kauppiaan tarjoamia tuotteita ostoskoriin.
 
 ## Verkkokauppan laajemmat toiminnallisuudet ovat työn alla.. ##
 
@@ -14,7 +14,6 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 [Arkkitehtuuri](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/arkkitehtuuri.md)
 
 ## Asennus
-
 Asenna projektin riippuvuudet komennolla:
 ```bash
 poetry install
@@ -24,4 +23,21 @@ poetry install
 Käynnistä sovellus komennolla:
 ```bash
 poetry run invoke start
+```
+
+## Testaus
+Käynnistä testit komennolla:
+```bash
+poetry run invoke test
+```
+
+Käynnistä testikattavuus komennolla:
+```bash
+poetry run invoke coverage-report
+```
+
+## Kooditarkistukset
+Käynnistä kooditarkastukset *pylint* avulla komennolla:
+```bash
+poetry run invoke lint
 ```
