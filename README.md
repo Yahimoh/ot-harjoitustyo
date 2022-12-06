@@ -13,6 +13,9 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 
 [Arkkitehtuuri](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/arkkitehtuuri.md)
 
+## Release 1.0
+[Verkkokauppa v1.0](https://github.com/Yahimoh/ot-harjoitustyo/releases/tag/1.0)
+
 ## Asennus
 Asenna projektin riippuvuudet komennolla:
 ```bash
