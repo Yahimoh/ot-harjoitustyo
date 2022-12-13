@@ -13,3 +13,9 @@
 - Asiakkaat näkevät vain oman ostoskorin tuotteita
 - Verkkokauppaan asiakkaaksi ei pääse ellei ole rekisteröitynyt
 - Ohjelman ulostulo korjattu ja siistitty
+
+## Viikko 6
+- Asiakkaan mahdollista lataa saldoa tilille
+- Asiakkaan mahdollista maksaa ostoskorissa olevat tuotteet
+- Verkkokaupan huolehtiminen siitä, että ostoskoria ei voi ostaa ellei ole riittävästi saldoa
+- Yleisiä siisteyksiä verkkokaupan näkemykselle
