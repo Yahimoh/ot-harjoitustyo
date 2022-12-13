@@ -1,9 +1,14 @@
+# Arkkitehtuurikuvaus
 ## Rakenne
+<img src=./IMG_0055.jpeg width="350" height="300">
+
+## Sovelluslogiikka
 
 ```mermaid
  classDiagram
  
       Main --> Merchant
+      Main --> ui
  
       Merchant --> Database
       Merchant --> Tuote
@@ -12,6 +17,10 @@
       
       class Main{
       
+      }
+      
+      class ui{
+      root: pääikkuna
       }
       
       class Merchant{
@@ -45,3 +54,8 @@ sequenceDiagram
   
   database -->> merchant: Käyttäjän Yahia id
 ```
+
+## Verkkokaupan datan pysyväistallennus
+Verkkokaupan datan pysyväistallennuksesta huolehtii luokat merchant.py ja tieokanta backend.db.
+
+Pysyväistallennuksessa on käytetty SQL-tietokantaa
