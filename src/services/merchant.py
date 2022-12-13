@@ -77,7 +77,9 @@ class Merchant:
             print("2: Katso ostoskorin tuotteet")
             print("3: Lisää tuote ostoskoriin")
             print("4: Poista tuote ostoskorilta")
-            print("5: Lopeta käyttö")
+            print("5: Lisää saldoa tilille")
+            print("6: Maksa ostokset")
+            print("0: Lopeta käyttö")
             valinta = int(input("Valinta 1/2/3/4/5: "))
 
 
@@ -91,10 +93,14 @@ class Merchant:
             if valinta == 4:
                 self.poista_tuote_ostoskorista(omistaja_id)
             if valinta == 5:
+                self.lisaa_saldoa_tilille(omistaja_id)
+            if valinta == 6:
+                self.ostoskorin_maksu(omistaja_id)
+            if valinta == 0:
                 print("Lopetetaan")
                 break
 
-            if valinta not in (1, 2, 3, 4, 5):
+            if valinta not in (0, 1, 2, 3, 4, 5, 6):
                 print("Väärä valinta!")
 
             print("")
@@ -109,8 +115,8 @@ class Merchant:
             print("2: Lisää tuote")
             print("3: Muokkaa tuotetta")
             print("4: Poista tuote")
-            print("5: Lopeta käyttö")
-            valinta = int(input("Valinta 1/2/3/4/5: "))
+            print("0: Lopeta käyttö")
+            valinta = int(input("Valinta 1/2/3/4/0: "))
 
             if valinta == 1:
                 self.nayta_tuotteet()
@@ -120,16 +126,17 @@ class Merchant:
                 self.muokkaa_tuotetta()
             if valinta == 4:
                 self.poista_tuote()
-            if valinta == 5:
+            if valinta == 0:
                 print("Lopetetaan")
                 break
 
-            if valinta not in (1, 2, 3, 4, 5):
+            if valinta not in (0, 1, 2, 3, 4):
                 print("Väärä valinta!")
 
             print("")
 
     def lisaa_tuote(self):
+        print("")
         nimi = input("Anna tuotteen nimi: ")
         hinta = float(input("Anna tuotteen hinta: "))
 
@@ -195,3 +202,41 @@ class Merchant:
         nimi = input("Anna poistettavan tuotteen tarkka nimi: ")
         self.db.poista_tuote_ostoskorista(nimi, omistaja_id)
         print("------------------------------------------------------")
+
+    def lisaa_saldoa_tilille(self, omistaja_id):
+        saldo = float(input("Anna talletettava saldo: "))
+
+        if saldo > 0:
+            nykyinen_saldo = self.db.talleta_rahaa_tilille(omistaja_id, saldo)
+            print(f"Talletus onnistui! Nykyinen saldo: {nykyinen_saldo}€")
+
+    def ostoskorin_summa(self, omistaja_id):
+        summa = self.db.hanki_ostoskorin_summa(omistaja_id)
+        return summa
+
+
+    def ostoskorin_maksu(self, omistaja_id):
+        print("")
+        summa = self.ostoskorin_summa(omistaja_id)
+        print(f"Ostoskorin summa: {summa}")
+
+        print("Maksetaanko ostokset?")
+        print("1: Maksa ostokset")
+        print("2: Jatka kaupan käyttöä")
+        valinta = int(input("Valinta 1/2: "))
+
+        if valinta == 1:
+            nykyinen_saldo = self.db.talleta_rahaa_tilille(omistaja_id, 0)
+            if nykyinen_saldo - summa >= 0:
+                miinustettava_saldo = 0
+                miinustettava_saldo = miinustettava_saldo - summa
+                uusi_saldo = self.db.talleta_rahaa_tilille(omistaja_id, miinustettava_saldo)
+                self.db.tyhjenna_ostoskori(omistaja_id)
+
+                print(f"Ostoskorin maksu onnistui! Nykyinen saldo: {uusi_saldo}")
+            else:
+                print("Saldolla ei tarpeeksi katetta! Yritä uudelleen lisäämällä tilille saldoa tai poistamalla tuotteita ostoskorista") # pylint: disable=line-too-long
+        elif valinta == 2:
+            print("Jatketaan kaupan käyttöä")
+        else:
+            print("Väärä valinta.")

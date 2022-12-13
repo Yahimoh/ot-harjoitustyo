@@ -9,14 +9,12 @@ class Database:
         self.db = sqlite3.connect("backend.db") # pylint: disable=invalid-name
         self.db.isolation_level = None
 
-        self.luo_taulut()
-
     def luo_taulut(self):
         try:
             self.db.execute("CREATE TABLE Tuote (id INTEGER PRIMARY KEY, nimi TEXT, hinta FLOAT)")
             self.db.execute("CREATE TABLE Ostoskori (id INTEGER PRIMARY KEY, omistaja_id INTEGER REFERENCES Tunnukset, tuote_id INTEGER REFERENCES  Tuote)")  # pylint: disable=line-too-long
-            self.db.execute("CREATE TABLE Tunnukset (id INTEGER PRIMARY KEY, kayttajatunnus TEXT, salasana TEXT)") # pylint: disable=line-too-long
-        except:
+            self.db.execute("CREATE TABLE Tunnukset (id INTEGER PRIMARY KEY, kayttajatunnus TEXT, salasana TEXT, saldo FLOAT)") # pylint: disable=line-too-long
+        except: # pylint: disable=bare-except
             print("Taulut ovat jo luotu")
 
 
@@ -88,7 +86,7 @@ class Database:
             print("Kayttajatunnus on jo olemassa")
             return -1
 
-        self.db.execute("INSERT INTO Tunnukset (kayttajatunnus, salasana) VALUES (?, ?)", [kayttajatunnus, salasana])
+        self.db.execute("INSERT INTO Tunnukset (kayttajatunnus, salasana, saldo) VALUES (?, ?, 0.0)", [kayttajatunnus, salasana])
         omistaja_id = self.db.execute("SELECT T.id FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone()
         return omistaja_id[0]
 
@@ -107,3 +105,27 @@ class Database:
 
         print("Väärä salasana!")
         return -1
+
+    def talleta_rahaa_tilille(self, kayttaja_id, saldo):
+        tilin_saldo = self.db.execute("SELECT T.saldo FROM Tunnukset T WHERE T.id =? ", [kayttaja_id]).fetchone()
+        nykyinen_saldo = tilin_saldo[0]
+
+        paivitettava_saldo = saldo + nykyinen_saldo
+        self.db.execute("UPDATE Tunnukset SET saldo =? WHERE id =?", [paivitettava_saldo, kayttaja_id])
+
+        uusi_saldo = self.db.execute("SELECT saldo FROM Tunnukset WHERE id =? ", [kayttaja_id]).fetchone()
+        nykyinen_uusi_saldo = uusi_saldo[0]
+
+        return nykyinen_uusi_saldo
+
+    def hanki_ostoskorin_summa(self, kayttaja_id):
+        alustava_summa = self.db.execute("SELECT SUM(T.hinta) FROM Tuote T, Ostoskori O WHERE O.tuote_id = T.id AND O.omistaja_id =? ", [kayttaja_id]).fetchone() # pylint: disable=line-too-long
+        ostoskorin_summa = alustava_summa[0]
+
+        if ostoskorin_summa is None:
+            ostoskorin_summa = 0
+
+        return ostoskorin_summa
+
+    def tyhjenna_ostoskori(self, kayttaja_id):
+        self.db.execute("DELETE FROM Ostoskori WHERE omistaja_id =? ", [kayttaja_id])
