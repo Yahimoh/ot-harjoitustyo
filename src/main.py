@@ -2,7 +2,6 @@ from services.merchant import Merchant
 #from ui.ui import UI
 #import tkinter as tk
 
-
 verkkokauppa = Merchant()
 
 #paanakyma = tk.Tk()

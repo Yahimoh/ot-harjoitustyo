@@ -2,11 +2,25 @@ from entities.tuote import Tuote
 from repositories.database import Database
 
 class Merchant:
+    """Luokka, jonka avulla käsitellään verkkokaupan toiminnallisuudet
+
+    Attributes:
+        db: Verkkokaupan tietokanta
+    """
 
     def __init__(self):
+        """ Verkkokaupan konstruktori, joka luo verkkokaupan
+        """
+
         self.db = Database() # pylint: disable=invalid-name
 
     def start(self, kayttaja: str):
+        """Metodi, joka aloittaa verkkokaupan toiminnallisuuden joko asiakkaan tai kauppiaan toiminnallisuudella.
+
+        Args:
+            kayttaja: Metodille annettava komento, verkkokaupan suorituksessa joko asiakkaan tai kauppiaan toiminnallisuudella # pylint: disable=line-too-long
+        """
+
 
         self.db.luo_taulut()
 
@@ -40,6 +54,12 @@ class Merchant:
             self.kauppiaan_toiminta()
 
     def asiakkaan_sisaankirjautuminen(self):
+        """Metodi, joka kirjaa asiakkaan sisään ja palauttaa asiakkaan id
+
+        Returns:
+            -1 jos asiakasta ei saada kirjattua sisään muuten palauttaa asiakkaan id-numeron
+        """
+
 
         while True:
             print("")
@@ -54,6 +74,12 @@ class Merchant:
             return omistaja_id
 
     def asiakkaan_rekisteroityminen(self):
+        """Metodi, joka rekisteröi ja kirjaa asiakasta sisään ja palauttaa asiakkaan id
+
+        Returns:
+            -1 jos asiakasta ei saada rekisteröityä sisään muuten palauttaa uuden asiakkaan id-numeron # pylint: disable=line-too-long
+        """
+
         while True:
             print("")
             print("Rekisteröidy asiakkaaksi!")
@@ -69,6 +95,12 @@ class Merchant:
 
 
     def asiakkaan_toiminta(self, omistaja_id):
+        """Metodi, joka ohjaa asiakkaan toimintaa
+
+        Args:
+            omistaja_id: metodille annettava asiakkaan id, joka sitten käytetään asiakkaan toiminnoissa # pylint: disable=line-too-long
+        """
+
 
         while True:
             print("")
@@ -80,7 +112,7 @@ class Merchant:
             print("5: Lisää saldoa tilille")
             print("6: Maksa ostokset")
             print("0: Lopeta käyttö")
-            valinta = int(input("Valinta 1/2/3/4/5: "))
+            valinta = int(input("Valinta 1/2/3/4/0: "))
 
 
 
@@ -106,6 +138,9 @@ class Merchant:
             print("")
 
     def kauppiaan_toiminta(self):
+        """Metodi, joka ohjaa kauppiaan toimintaa
+        """
+
         print("")
         print("Kauppiaan näkymä: ")
 
@@ -136,6 +171,9 @@ class Merchant:
             print("")
 
     def lisaa_tuote(self):
+        """Metodi, joka auttaa kauppiasta lisäämään tuotteen tietokantaan
+        """
+
         print("")
         nimi = input("Anna tuotteen nimi: ")
         hinta = float(input("Anna tuotteen hinta: "))
@@ -146,6 +184,9 @@ class Merchant:
         print("------------------------------------------------------")
 
     def muokkaa_tuotetta(self):
+        """Metodi, joka auttaa kauppiasta muokkaamaan tuotetta tietokannassa
+        """
+
         self.nayta_tuotteet()
         print("")
 
@@ -168,6 +209,9 @@ class Merchant:
         print("------------------------------------------------------")
 
     def poista_tuote(self):
+        """Metodi, joka auttaa kauppiasta poistamaan tuotetta tietokannassa
+        """
+
         self.nayta_tuotteet()
         print("")
 
@@ -177,6 +221,9 @@ class Merchant:
 
 
     def nayta_tuotteet(self):
+        """Metodi, joka näyttää kaikki kauppiaan lisäämät tuotteet tietokannassa
+        """
+
         print("")
         self.db.nayta_tuotteet()
 
