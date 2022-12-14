@@ -14,7 +14,7 @@
 | 6.12  | 3      | Sisäänkirjautumisen & rekisteröinnin koodaus
 |       | 3      | Sekvenssikaavio ja muu dokumentin korjaus
 | 10.12 | 2      | Tkinterin alustava koodaus ja testaus
-| 14.12 | 1      | Asiakkaan saldon lataamisen koodaus
+| 13.12 | 1      | Asiakkaan saldon lataamisen koodaus
 |       | 2      | Asiakkaan ostoskorin maksu ja tyhjennys koodaus
 |       | 0.5    | Docstring dokumentaatio
 |       | 1      | Arkkitehtuurikuvaus & alustava käyttöohje
