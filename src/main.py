@@ -1,15 +1,15 @@
 from services.merchant import Merchant
-#from ui.ui import UI
-#import tkinter as tk
+from ui.ui import UI
+from tkinter import Tk, ttk, constants
 
 verkkokauppa = Merchant()
 
-#paanakyma = tk.Tk()
-#paanakyma.geometry("450x200")
-#nakyma = UI()
-#nakyma.start(paanakyma)
+paanakyma = Tk()
+paanakyma.geometry("450x200")
+nakyma = UI(paanakyma)
+nakyma.start()
 
-#paanakyma.mainloop()
+paanakyma.mainloop()
 
 while True:
     print("----------Tervetuloa verkkokauppaan!----------")
