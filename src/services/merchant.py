@@ -11,164 +11,27 @@ class Merchant:
     def __init__(self):
         """ Verkkokaupan konstruktori, joka luo verkkokaupan
         """
-
         self.db = Database() # pylint: disable=invalid-name
 
-    def start(self, kayttaja: str):
-        """Metodi, joka aloittaa verkkokaupan toiminnallisuuden joko asiakkaan tai kauppiaan toiminnallisuudella.
-
-        Args:
-            kayttaja: Metodille annettava komento, verkkokaupan suorituksessa joko asiakkaan tai kauppiaan toiminnallisuudella # pylint: disable=line-too-long
-        """
-
-
-        self.db.luo_taulut()
-
-        if kayttaja == "asiakas":
-            print("")
-            print("----------Tervetuloa verkkokaupan asiakkaaksi!----------")
-            print("")
-
-            omistaja_id = -1
-
-            while True:
-                print("1: Kirjaudu sisään")
-                print("2: Rekisteröidy")
-
-                valinta = int(input("Valinta 1/2: "))
-
-                if valinta == 1:
-                    omistaja_id = self.asiakkaan_sisaankirjautuminen()
-                    self.asiakkaan_toiminta(omistaja_id)
-                    break
-                if valinta == 2:
-                    omistaja_id = self.asiakkaan_rekisteroityminen()
-                    self.asiakkaan_toiminta(omistaja_id)
-                    break
-
-                print("Väärä valinta!")
-                print("")
-
-
-        else:
-            self.kauppiaan_toiminta()
-
-    def asiakkaan_sisaankirjautuminen(self):
+    def asiakkaan_sisaankirjautuminen(self, kayttajatunnus, salasana):
         """Metodi, joka kirjaa asiakkaan sisään ja palauttaa asiakkaan id
 
         Returns:
-            -1 jos asiakasta ei saada kirjattua sisään muuten palauttaa asiakkaan id-numeron
+            -1 tai -2 jos asiakasta ei saada kirjattua sisään muuten palauttaa asiakkaan id-numeron
         """
 
+        omistaja_id = self.db.kirjaudu_sisaan(kayttajatunnus, salasana)
+        return omistaja_id
 
-        while True:
-            print("")
-            print("Kirjaudu sisään: ")
-            kayttajatunnus = input("Käyttäjätunnus: ")
-            salasana = input("Salasana: ")
-
-            omistaja_id = self.db.kirjaudu_sisaan(kayttajatunnus, salasana)
-            if omistaja_id == -1:
-                continue
-
-            return omistaja_id
-
-    def asiakkaan_rekisteroityminen(self):
+    def asiakkaan_rekisteroityminen(self, kayttajatunnus, salasana):
         """Metodi, joka rekisteröi ja kirjaa asiakasta sisään ja palauttaa asiakkaan id
 
         Returns:
             -1 jos asiakasta ei saada rekisteröityä sisään muuten palauttaa uuden asiakkaan id-numeron # pylint: disable=line-too-long
         """
 
-        while True:
-            print("")
-            print("Rekisteröidy asiakkaaksi!")
-            kayttajatunnus = input("Käyttäjätunnus: ")
-            salasana = input("Salasana: ")
-
-            omistaja_id = self.db.luo_tunnus(kayttajatunnus, salasana)
-            if omistaja_id == -1:
-                continue
-
-            return omistaja_id
-
-
-
-    def asiakkaan_toiminta(self, omistaja_id):
-        """Metodi, joka ohjaa asiakkaan toimintaa
-
-        Args:
-            omistaja_id: metodille annettava asiakkaan id, joka sitten käytetään asiakkaan toiminnoissa # pylint: disable=line-too-long
-        """
-
-
-        while True:
-            print("")
-            print("Valitse toiminnoista:")
-            print("1: Katso saatavilla olevat tuotteet")
-            print("2: Katso ostoskorin tuotteet")
-            print("3: Lisää tuote ostoskoriin")
-            print("4: Poista tuote ostoskorilta")
-            print("5: Lisää saldoa tilille")
-            print("6: Maksa ostokset")
-            print("0: Lopeta käyttö")
-            valinta = int(input("Valinta 1/2/3/4/0: "))
-
-
-
-            if valinta == 1:
-                self.nayta_tuotteet()
-            if valinta == 2:
-                self.nayta_ostoskorin_tuotteet(omistaja_id)
-            if valinta == 3:
-                self.lisaa_tuote_ostoskoriin(omistaja_id)
-            if valinta == 4:
-                self.poista_tuote_ostoskorista(omistaja_id)
-            if valinta == 5:
-                self.lisaa_saldoa_tilille(omistaja_id)
-            if valinta == 6:
-                self.ostoskorin_maksu(omistaja_id)
-            if valinta == 0:
-                print("Lopetetaan")
-                break
-
-            if valinta not in (0, 1, 2, 3, 4, 5, 6):
-                print("Väärä valinta!")
-
-            print("")
-
-    def kauppiaan_toiminta(self):
-        """Metodi, joka ohjaa kauppiaan toimintaa
-        """
-
-        print("")
-        print("Kauppiaan näkymä: ")
-
-        while True:
-            print("Valitse toiminnoista:")
-            print("1: Näytä tuotteet")
-            print("2: Lisää tuote")
-            print("3: Muokkaa tuotetta")
-            print("4: Poista tuote")
-            print("0: Lopeta käyttö")
-            valinta = int(input("Valinta 1/2/3/4/0: "))
-
-            if valinta == 1:
-                self.nayta_tuotteet()
-            if valinta == 2:
-                self.lisaa_tuote()
-            if valinta == 3:
-                self.muokkaa_tuotetta()
-            if valinta == 4:
-                self.poista_tuote()
-            if valinta == 0:
-                print("Lopetetaan")
-                break
-
-            if valinta not in (0, 1, 2, 3, 4):
-                print("Väärä valinta!")
-
-            print("")
+        omistaja_id = self.db.luo_tunnus(kayttajatunnus, salasana)
+        return omistaja_id
 
     def lisaa_tuote(self):
         """Metodi, joka auttaa kauppiasta lisäämään tuotteen tietokantaan
@@ -180,7 +43,11 @@ class Merchant:
 
         tuote = Tuote(nimi, hinta)
 
-        self.db.luo_tuote(tuote)
+        palautus = self.db.luo_tuote(tuote)
+        if palautus == 1:
+            print("Tuote luotu onnistuneesti!")
+        else:
+            print("Tuote on jo olemassa.")
         print("------------------------------------------------------")
 
     def muokkaa_tuotetta(self):
@@ -225,7 +92,10 @@ class Merchant:
         """
 
         print("")
-        self.db.nayta_tuotteet()
+        tuotteet = self.db.nayta_tuotteet()
+
+        for tuote in tuotteet:
+            print(f"{tuote[0]}: {tuote[1]}, {tuote[2]}€")
 
     def lisaa_tuote_ostoskoriin(self, omistaja_id):
         self.nayta_tuotteet()
@@ -235,13 +105,15 @@ class Merchant:
         print("------------------------------------------------------")
 
         print("Ostoskorissa olevat tuotteet:")
-        self.db.nayta_ostoskorin_tuotteet(omistaja_id)
-        print("------------------------------------------------------")
+        self.nayta_ostoskorin_tuotteet(omistaja_id)
 
     def nayta_ostoskorin_tuotteet(self, omistaja_id):
+        ostoskorin_tuotteet = self.db.nayta_ostoskorin_tuotteet(omistaja_id)
         print("")
         print("Ostoskorissa olevat tuotteet:")
-        self.db.nayta_ostoskorin_tuotteet(omistaja_id)
+        for tuote in ostoskorin_tuotteet:
+            print(tuote[0])
+
         print("------------------------------------------------------")
 
     def poista_tuote_ostoskorista(self, omistaja_id):

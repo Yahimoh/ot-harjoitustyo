@@ -15,7 +15,7 @@ class Database:
             self.db.execute("CREATE TABLE Ostoskori (id INTEGER PRIMARY KEY, omistaja_id INTEGER REFERENCES Tunnukset, tuote_id INTEGER REFERENCES  Tuote)")  # pylint: disable=line-too-long
             self.db.execute("CREATE TABLE Tunnukset (id INTEGER PRIMARY KEY, kayttajatunnus TEXT, salasana TEXT, saldo FLOAT)") # pylint: disable=line-too-long
         except: # pylint: disable=bare-except
-            print("Taulut ovat jo luotu")
+            print("")
 
 
 
@@ -24,12 +24,11 @@ class Database:
         tuotteet = self.tuotteiden_nimet()
 
         if tuote.nimi in tuotteet:
-            print("Tuote on jo olemassa.")
-            return
+            return -1
 
         self.db.execute("INSERT INTO Tuote (nimi, hinta) VALUES (?, ?)", [tuote.nimi, tuote.hinta])
-        #tuote_id = self.db.execute("SELECT T.id FROM Tuote T WHERE T.nimi =? ", [tuote.nimi]).fetchone() # pylint: disable=line-too-long
-        #self.lisaa_tuote_tuotteisiin(tuote_id)
+
+        return 1
 
     def poista_tuote(self, tuote_id):
         self.db.execute("DELETE FROM Tuote WHERE id =?", [tuote_id])
@@ -39,9 +38,8 @@ class Database:
 
     def nayta_tuotteet(self):
         tuotteet = self.db.execute("SELECT T.id, T.nimi, T.hinta FROM Tuote T").fetchall()
+        return tuotteet
 
-        for tuote in tuotteet:
-            print(f"{tuote[0]}: {tuote[1]}, {tuote[2]}€")
 
     def tuotteiden_nimet(self):
         tuotteet = self.db.execute("SELECT T.nimi FROM Tuote T").fetchall()
@@ -55,9 +53,7 @@ class Database:
 
     def nayta_ostoskorin_tuotteet(self, omistaja_id):
         ostoskorin_tuotteet = self.db.execute("SELECT T.nimi From Tuote T, Ostoskori O WHERE T.id = O.tuote_id AND O.omistaja_id =?", [omistaja_id]).fetchall() # pylint: disable=line-too-long
-
-        for tuote in ostoskorin_tuotteet:
-            print(tuote[0])
+        return ostoskorin_tuotteet
 
     def poista_tuote_ostoskorista(self, nimi, omistaja_id):
         query = self.db.execute("SELECT id FROM Tuote T WHERE T.nimi =? ", [nimi]).fetchone()
@@ -83,7 +79,6 @@ class Database:
 
     def luo_tunnus(self, kayttajatunnus, salasana):
         if kayttajatunnus in self.kaikki_kayttajatunnukset():
-            print("Kayttajatunnus on jo olemassa")
             return -1
 
         self.db.execute("INSERT INTO Tunnukset (kayttajatunnus, salasana, saldo) VALUES (?, ?, 0.0)", [kayttajatunnus, salasana])
@@ -92,7 +87,6 @@ class Database:
 
     def kirjaudu_sisaan(self, kayttajatunnus, salasana):
         if kayttajatunnus not in self.kaikki_kayttajatunnukset():
-            print("Väärä käyttäjätunnus!")
             return -1
 
         salasana_query = self.db.execute("SELECT T.salasana FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone()
@@ -100,11 +94,9 @@ class Database:
 
         if kayttajatunnuksen_salasana == salasana:
             omistaja_id = self.db.execute("SELECT T.id FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone()
-            print("Kirjauduttu sisään!")
             return omistaja_id[0]
 
-        print("Väärä salasana!")
-        return -1
+        return -2
 
     def talleta_rahaa_tilille(self, kayttaja_id, saldo):
         tilin_saldo = self.db.execute("SELECT T.saldo FROM Tunnukset T WHERE T.id =? ", [kayttaja_id]).fetchone()

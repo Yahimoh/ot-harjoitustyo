@@ -1,31 +1,10 @@
 from services.merchant import Merchant
-from ui.ui import UI
+from ui.tui import TUI
 from tkinter import Tk, ttk, constants
 
-verkkokauppa = Merchant()
+def main():
+    nakyma = TUI()
+    nakyma.start()
 
-paanakyma = Tk()
-paanakyma.geometry("450x200")
-nakyma = UI(paanakyma)
-nakyma.start()
-
-paanakyma.mainloop()
-
-while True:
-    print("----------Tervetuloa verkkokauppaan!----------")
-    print("")
-    print("Oletko asiakas vai kauppias?")
-    print("1: Asiakas")
-    print("2: Kauppias")
-    valinta = int(input("Valinta 1/2: "))
-
-    if valinta not in (1, 2):
-        continue
-
-    if valinta == 1:
-        verkkokauppa.start("asiakas")
-        break
-
-    if valinta == 2:
-        verkkokauppa.start("kauppias")
-        break
+if __name__ == "__main__":
+    main()
