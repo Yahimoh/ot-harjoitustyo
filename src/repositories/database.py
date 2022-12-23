@@ -4,10 +4,10 @@ from entities.tuote import Tuote
 class Database:
 
     def __init__(self):
-
-
         self.db = sqlite3.connect("backend.db") # pylint: disable=invalid-name
         self.db.isolation_level = None
+
+        self.luo_taulut()
 
     def luo_taulut(self):
         try:
