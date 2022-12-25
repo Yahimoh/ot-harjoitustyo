@@ -16,7 +16,11 @@ class AsiakkaanTUI:
             print("1: Kirjaudu sisään")
             print("2: Rekisteröidy")
 
-            valinta = int(input("Valinta 1/2: "))
+            try:
+                valinta = int(input("Valinta 1/2: "))
+            except ValueError:
+                print("Valinta ei ollut numero, yritä uudestaan")
+                continue
 
             if valinta not in (1, 2):
                 print("Väärä valinta!")
@@ -35,8 +39,20 @@ class AsiakkaanTUI:
         while True:
             print("")
             print("Kirjaudu sisään: ")
-            kayttajatunnus = input("Käyttäjätunnus: ")
-            salasana = input("Salasana: ")
+            try:
+                kayttajatunnus = input("Käyttäjätunnus: ")
+            except:
+                print("")
+                print("Vääränlainen syöte, yritä uudestaan")
+                continue
+
+            try:
+                salasana = input("Salasana: ")
+            except:
+                print("")
+                print("Vääränlainen syöte, yritä uudestaan")
+                continue
+
 
             omistaja_id = self._merchant.asiakkaan_sisaankirjautuminen(kayttajatunnus, salasana)
 
@@ -86,14 +102,21 @@ class AsiakkaanTUI:
     def asiakkaan_toiminta_tui(self, kayttaja_id):
         while True:
             self.asiakkaan_toiminnan_tulostus()
-            valinta = int(input("Valinta 1/2/3/4/5/6/0: "))
+
+            try:
+                valinta = int(input("Valinta 1/2/3/4/5/6/0: "))
+            except:
+                print("")
+                print("Vääränlainen valinta")
+                print("Yritä uudestaan")
+                continue
 
             if valinta == 1:
-                self._merchant.nayta_tuotteet()
+                self.nayta_tuotteet_tui()
             if valinta == 2:
-                self._merchant.nayta_ostoskorin_tuotteet(kayttaja_id)
+                self.nayta_ostoskorin_tuotteet_tui(kayttaja_id)
             if valinta == 3:
-                self._merchant.lisaa_tuote_ostoskoriin(kayttaja_id)
+                self.lisaa_tuote_ostoskoriin_tui(kayttaja_id)
             if valinta == 4:
                 self._merchant.poista_tuote_ostoskorista(kayttaja_id)
             if valinta == 5:
@@ -103,3 +126,31 @@ class AsiakkaanTUI:
             if valinta == 0:
                 print("Lopetetaan")
                 break
+
+    def nayta_tuotteet_tui(self):
+        tuotteet = self._merchant.nayta_tuotteet()
+
+        for tuote in tuotteet:
+            print(f"{tuote[0]}: {tuote[1]}, {tuote[2]}€")
+
+
+    def nayta_ostoskorin_tuotteet_tui(self, kayttaja_id):
+        tuotteet = self._merchant.nayta_ostoskorin_tuotteet(kayttaja_id)
+
+        print("")
+        print("Ostoskorissa olevat tuotteet:")
+        for tuote in tuotteet:
+            print(tuote[0])
+
+        print("------------------------------------------------------")
+
+
+    def lisaa_tuote_ostoskoriin_tui(self, kayttaja_id):
+        self.nayta_tuotteet_tui()
+
+        tuotteen_id = int(input("Valitse ostoskoriin lisättävän tuotteen id: "))
+
+        self._merchant.lisaa_tuote_ostoskoriin(kayttaja_id, tuotteen_id)
+
+        print("Ostoskorissa olevat tuotteet:")
+        self.nayta_ostoskorin_tuotteet_tui(kayttaja_id)

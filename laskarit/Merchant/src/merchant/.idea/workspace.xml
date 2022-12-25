@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b9f469e4-ac47-4cd7-abea-35d52084d23d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../src/repositories/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/repositories/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../tasks.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../tasks.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../backend.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../src/services/merchant.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/services/merchant.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../src/ui/asiakkaan_tui.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/ui/asiakkaan_tui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../src/ui/kauppiaan_tui.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/ui/kauppiaan_tui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../src/ui/tui.py" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../src/ui/tui.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,6 +130,7 @@
       <workItem from="1671535456223" duration="5183000" />
       <workItem from="1671786263697" duration="9311000" />
       <workItem from="1671907485921" duration="2173000" />
+      <workItem from="1671952092594" duration="10811000" />
     </task>
     <servers />
   </component>

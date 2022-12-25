@@ -27,7 +27,12 @@ class TUI:
         print("2: Kauppias")
 
         while True:
-            valinta = int(input("Valinta 1/2: "))
+            try:
+                valinta = int(input("Valinta 1/2: "))
+            except:
+                print("")
+                print("Valinta ei ollut numero, yritä uudestaan")
+                continue
             if valinta not in (1, 2):
                 print("Väärä valinta!")
                 print("Yritä uudelleen.")
