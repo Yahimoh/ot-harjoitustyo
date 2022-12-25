@@ -34,7 +34,7 @@ class Database:
         self.db.execute("DELETE FROM Tuote WHERE id =?", [tuote_id])
 
     def lisaa_tuote_ostoskoriin(self, tuote_id, omistaja_id):
-        self.db.execute("INSERT INTO Ostoskori (tuote_id, omistaja_id) VALUES (?, ?)", [tuote_id, omistaja_id])
+        self.db.execute("INSERT INTO Ostoskori (tuote_id, omistaja_id) VALUES (?, ?)", [tuote_id, omistaja_id]) # pylint: disable=line-too-long
 
     def nayta_tuotteet(self):
         tuotteet = self.db.execute("SELECT T.id, T.nimi, T.hinta FROM Tuote T").fetchall()
@@ -59,7 +59,7 @@ class Database:
         query = self.db.execute("SELECT id FROM Tuote T WHERE T.nimi =? ", [nimi]).fetchone()
         tuote_id = query[0]
 
-        self.db.execute("DELETE FROM Ostoskori WHERE tuote_id =? AND omistaja_id =? ", [tuote_id, omistaja_id])
+        self.db.execute("DELETE FROM Ostoskori WHERE tuote_id =? AND omistaja_id =? ", [tuote_id, omistaja_id]) # pylint: disable=line-too-long
 
     def muokkaa_tuotteen_nimea(self, uusi_nimi, tuote_id):
         self.db.execute("UPDATE Tuote SET nimi =? WHERE id =? ", [uusi_nimi, tuote_id])
@@ -81,31 +81,31 @@ class Database:
         if kayttajatunnus in self.kaikki_kayttajatunnukset():
             return -1
 
-        self.db.execute("INSERT INTO Tunnukset (kayttajatunnus, salasana, saldo) VALUES (?, ?, 0.0)", [kayttajatunnus, salasana])
-        omistaja_id = self.db.execute("SELECT T.id FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone()
+        self.db.execute("INSERT INTO Tunnukset (kayttajatunnus, salasana, saldo) VALUES (?, ?, 0.0)", [kayttajatunnus, salasana]) # pylint: disable=line-too-long
+        omistaja_id = self.db.execute("SELECT T.id FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone() # pylint: disable=line-too-long
         return omistaja_id[0]
 
     def kirjaudu_sisaan(self, kayttajatunnus, salasana):
         if kayttajatunnus not in self.kaikki_kayttajatunnukset():
             return -1
 
-        salasana_query = self.db.execute("SELECT T.salasana FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone()
+        salasana_query = self.db.execute("SELECT T.salasana FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone() # pylint: disable=line-too-long
         kayttajatunnuksen_salasana = salasana_query[0]
 
         if kayttajatunnuksen_salasana == salasana:
-            omistaja_id = self.db.execute("SELECT T.id FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone()
+            omistaja_id = self.db.execute("SELECT T.id FROM Tunnukset T WHERE T.kayttajatunnus =?", [kayttajatunnus]).fetchone() # pylint: disable=line-too-long
             return omistaja_id[0]
 
         return -2
 
     def talleta_rahaa_tilille(self, kayttaja_id, saldo):
-        tilin_saldo = self.db.execute("SELECT T.saldo FROM Tunnukset T WHERE T.id =? ", [kayttaja_id]).fetchone()
+        tilin_saldo = self.db.execute("SELECT T.saldo FROM Tunnukset T WHERE T.id =? ", [kayttaja_id]).fetchone() # pylint: disable=line-too-long
         nykyinen_saldo = tilin_saldo[0]
 
         paivitettava_saldo = saldo + nykyinen_saldo
-        self.db.execute("UPDATE Tunnukset SET saldo =? WHERE id =?", [paivitettava_saldo, kayttaja_id])
+        self.db.execute("UPDATE Tunnukset SET saldo =? WHERE id =?", [paivitettava_saldo, kayttaja_id]) # pylint: disable=line-too-long
 
-        uusi_saldo = self.db.execute("SELECT saldo FROM Tunnukset WHERE id =? ", [kayttaja_id]).fetchone()
+        uusi_saldo = self.db.execute("SELECT saldo FROM Tunnukset WHERE id =? ", [kayttaja_id]).fetchone() # pylint: disable=line-too-long
         nykyinen_uusi_saldo = uusi_saldo[0]
 
         return nykyinen_uusi_saldo
