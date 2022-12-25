@@ -1,7 +1,7 @@
 # Vaatimuusmäärittely #
 
 ## Sovelluksesta ##
-Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoamia tuotteita ja palveluita. Kauppias voi laatia tuotteile muun muassa nimen, hinnan ja tuotteen määrän. Verkkokaupassa luonnollisesti asiakas voi ostaa näitä kauppiaan tarjoamia tuotteita. 
+Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoamia tuotteita ja palveluita. Kauppias voi laatia tuotteile nimen ja hinnan. Verkkokaupassa luonnollisesti asiakas voi ostaa näitä kauppiaan tarjoamia tuotteita. 
 
 ## Käyttäjät ##
 Sovelluksessa on kaksi erilaista käyttäjää eli kauppias ja asiakas.
@@ -12,14 +12,14 @@ Verkkokaupan käyttöliittymä tulee olemaan kaksi erillaista, yksi omanlainen k
 ## Perusversion toiminnallisuus ## 
 
 ### Kauppias ###
-Kauppias voi lisätä tuotteita, muokata tuotteita sekä poistaa tuotteita. *tehty*
+Kauppias voi lisätä tuotteita, muokata tuotteita sekä poistaa tuotteita.
 
 ### Asiakas ###
-Asiakas voi selailla tuotteita ja lisätä sekä poistaa tuotteita asiakkaan ostoskorista. *tehty*
+Asiakas voi kirjautua tai rekisteröityä sisään, selailla tuotteita ja lisätä sekä poistaa tuotteita asiakkaan ostoskorista. Tallettaa saldoa ja maksaa ostoskorin summan lisätyllä saldolla.
 
 ## Jatkokehitysideoita ##
 
-Perustoiminnallisuuden jälkeen voidaan lisätä seuraavia toimintoja:
+Tulevaisuudessa voidaan lisätä seuraavia toimintoja:
 
 ### Kauppiaalle ###
 
@@ -28,8 +28,5 @@ Perustoiminnallisuuden jälkeen voidaan lisätä seuraavia toimintoja:
 - Mahdollisuus laajemmille tuoteinformaatioille
 
 ### Asiakkaalle ###
-
-- Mahdollisuus maksaa ostoksia
-- Sisäänkirjautuminen ja niin myös mahdollisuus esim. ostoksien seurannalle *tehty*
 - Tuotteiden arvostelu
 - Tuotteiden lisääminen suosikeihin
