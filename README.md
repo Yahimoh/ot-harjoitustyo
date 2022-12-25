@@ -15,6 +15,8 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 
 [Alustava käyttöohje](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/kayttoohje.md)
 
+[Testausdokumentti](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/Testausdokumentti.md)
+
 ## Release
 [Verkkokauppa v1.1](https://github.com/Yahimoh/ot-harjoitustyo/releases/tag/1.1)
 
