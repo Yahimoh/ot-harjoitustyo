@@ -7,20 +7,35 @@
 ```mermaid
  classDiagram
  
-      Main --> Merchant
-      Main --> ui
+      Main --> TUI
  
       Merchant --> Database
       Merchant --> Tuote
  
       Database --> Tuote
       
+      TUI --> AsiakkaanTUI
+      TUI --> KauppiaanTUI
+      
+      AsiakkaanTUI --> Merchant
+      KauppiaanTUI --> Merchant
+      
       class Main{
       
       }
       
-      class ui{
-      root: pääikkuna
+      class AsiakkaanTUI {
+      -asiakkaan_id: Int
+      -merchant: Merchant
+      }
+      
+      class KauppiaanTUI {
+      -merchant: Merchant
+      }
+      
+      class TUI{
+      asiakkaan_tui: AsiakkaanTUI
+      kauppiaan_tui: KauppiaanTUI
       }
       
       class Merchant{
@@ -45,12 +60,17 @@ sequenceDiagram
   actor Asiakas
   
   participant main
+  participant tui
   participant merchant
   participant database
+  participant asiakas_tui
   
-  Asiakas ->> main: Valinta 1 (asiakas)
-  main ->> merchant: start("asiakas")
+  main ->> tui: start()
+  Asiakas ->> tui: Valinta 1 (asiakas)
+  tui ->> asiakas_tui: asiakkaan_sisaankirjautuminen_tui()
+  asiakas_tui ->> merchant: asiakkaan_sisaankirjautuminen()
   merchant ->> database: kirjaudu_sisaan("Yahia", 1234)
+  
   
   database -->> merchant: Käyttäjän Yahia id
 ```
