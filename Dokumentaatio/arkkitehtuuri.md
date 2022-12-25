@@ -1,6 +1,7 @@
 # Arkkitehtuurikuvaus
 ## Rakenne
 <img src=./IMG_0055.jpeg width="350" height="300">
+Hakemisto __ui__ sisältää tekstikäyttöliittymälle koodia, hakemisto **services** sisältää sovelluksen toiminnalle ja kontrollille tarvittavia koodia, **entities** sisältää koodi- tiedostomalleja ja hakemisto **repositories** sisältää sovelluksen tietokannalle tarvittavia toiminnallisuuksia. **main.py** hoitaa sovelluksen alustukselle ja käynnistämiselle tarvittavia toimintoja. 
 
 ## Sovelluslogiikka
 
@@ -52,7 +53,12 @@
       hinta: int
       }  
 ```
-
+## Käyttöliittymä
+Tekstikäyttöliittymiä ovat:
+- Kaupan käynnistys ja roolin (asiakas / kauppias) valinta
+- Kauppiaan näkymä ja toiminnot
+- Asiakkaan sisäänkirjautumisen / rekisteröinnin näkymä
+- Asiakkaan näkymä ja toiminnot
 
 ## Käyttäjän sisäänkirjautuminen
 ```mermaid
