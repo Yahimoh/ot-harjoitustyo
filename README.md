@@ -18,6 +18,8 @@ Verkkokauppa sovelluksen avulla kauppias voi laittaa myyntiin kauppiaan tarjoami
 [Testausdokumentti](https://github.com/Yahimoh/ot-harjoitustyo/blob/main/Dokumentaatio/Testausdokumentti.md)
 
 ## Release
+[Loppupalautus](https://github.com/Yahimoh/ot-harjoitustyo/releases/tag/Loppupalautus)
+
 [Verkkokauppa v1.1](https://github.com/Yahimoh/ot-harjoitustyo/releases/tag/1.1)
 
 [Verkkokauppa v1.0](https://github.com/Yahimoh/ot-harjoitustyo/releases/tag/1.0)
